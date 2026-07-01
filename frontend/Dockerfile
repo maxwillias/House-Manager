@@ -8,7 +8,9 @@ RUN npm install
 
 COPY . .
 
-RUN npm run build
+ARG BUILD_CONFIGURATION=production
+
+RUN npm run build -- --configuration=${BUILD_CONFIGURATION}
 
 FROM nginx:alpine
 

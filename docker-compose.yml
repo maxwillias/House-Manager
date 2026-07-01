@@ -50,6 +50,8 @@ services:
 
     build:
       context: ./frontend
+      args:
+        BUILD_CONFIGURATION: ${BUILD_CONFIGURATION:-production}
 
     container_name: house-manager-frontend
 
